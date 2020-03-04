@@ -1,3 +1,7 @@
+src/OS_Open_Zoomstack.mbtiles
+zxy
+*.json
+
 # Logs
 logs
 *.log
