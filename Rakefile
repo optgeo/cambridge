@@ -13,8 +13,13 @@ namespace :build do
 
   desc 'build style.json'
   task :style do
-    sh({'LOCATION' => 'http://localhost'}, 
+    sh({'LOCATION' => 'http://localhost:9966'}, 
       "parse-hocon style.conf > style.json")
   end
+end
+
+desc 'host the site'
+task :host do
+  sh "budo"
 end
 

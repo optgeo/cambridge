@@ -4,8 +4,28 @@ OS Open Zoomstack on Misora
 # background
 
 # usage
-## download OS Open Zoomstack
+## 1. download OS Open Zoomstack
 Download OS Open Zoomstack from [Ordnance Survey](https://www.ordnancesurvey.co.uk/opendatadownload/products.html#ZMSTCK). Move the downloaded file at `src/OS_Open_Zoomstack.mbtiles`.
+
+## 2. extract vector tiles
+```zsh
+rake build:tiles
+```
+
+## 3. build style.json
+```zsh
+rake build:style
+```
+
+## 4. start the server
+```zsh
+rake host
+```
+
+## 5. next step: see what is possible
+```zsh
+rake -T
+```
 
 # directories
 - `src` is for source files
