@@ -15,6 +15,7 @@ namespace :build do
   task :style do
     sh({'LOCATION' => 'http://localhost:9966'}, 
       "parse-hocon style.conf > style.json")
+    sh "gl-style-validate style.json"
   end
 end
 
@@ -23,3 +24,9 @@ task :host do
   sh "budo"
 end
 
+namespace :run do
+  desc 'run docker for cambridge'
+  task :docker do
+    sh "docker run -ti --rm -v #{Dir.pwd}:/root unvt/cambridge"
+  end
+end

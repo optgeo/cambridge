@@ -27,7 +27,10 @@ RUN apk update &&\
     yarn\
     zip\
     zlib-dev&&\
-  git clone https://github.com/optgeo/cambridge
-
-WORKDIR cambridge
+  git clone https://github.com/mapbox/tippecanoe&&\
+    cd tippecanoe&&\
+    make &&\
+    make install&&\
+    cd ..&&\
+    rm -rf tippecanoe
 
