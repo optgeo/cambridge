@@ -29,6 +29,6 @@ end
 namespace :run do
   desc 'run docker for cambridge'
   task :docker do
-    sh "docker run -ti --rm -v #{Dir.pwd}:/root/cambridge unvt/cambridge"
+    sh "docker run -ti --rm -v #{Dir.pwd}:/root/cambridge -p 80:80 unvt/cambridge"
   end
 end
