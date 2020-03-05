@@ -26,9 +26,9 @@ task :host do
   sh "node index.js"
 end
 
-namespace :run do
+namespace :docker do
   desc 'run docker for cambridge'
-  task :docker do
+  task :run do
     sh "docker run -ti --rm -v #{Dir.pwd}:/root/cambridge -p 80:80 unvt/cambridge"
   end
 end

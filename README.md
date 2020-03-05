@@ -27,6 +27,11 @@ rake host
 rake -T
 ```
 
+# run on docker
+```
+rake docker:run
+```
+
 # directories
 - `src` is for source files
 - `docs` is for static resources
