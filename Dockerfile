@@ -14,6 +14,7 @@ RUN apk update &&\
     libtool\
     linux-headers\
     make\
+    nginx\
     nodejs\
     npm\
     openssh\
@@ -32,5 +33,18 @@ RUN apk update &&\
     make &&\
     make install&&\
     cd ..&&\
-    rm -rf tippecanoe
-
+    rm -rf tippecanoe&&\
+  yarn global add\
+    browserify\
+    budo\
+    hjson\
+    pm2\
+    rollup\
+    @mapbox/mapbox-gl-style-spec\
+    @pushcorn/hocon-parser&&\
+  git clone https://github.com/ibesora/vt-optimizer&&\
+    cd vt-optimizer&&\
+    npm install&&\
+    cd ..&&\
+  mkdir cambridge
+WORKDIR /root/cambridge
