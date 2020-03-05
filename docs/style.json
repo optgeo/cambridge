@@ -1,0 +1,276 @@
+{
+  "center": [
+    -1.7245239450279541,
+    52.53946123863224
+  ],
+  "glyphs": "http://raspberrypi.local/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "sea",
+      "paint": {
+        "fill-color": "#c5cdd0"
+      },
+      "source": "v",
+      "source-layer": "sea",
+      "type": "fill"
+    },
+    {
+      "id": "national-parks",
+      "maxzoom": 12,
+      "paint": {
+        "fill-color": "#d8ddd4",
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          5,
+          0.6,
+          9,
+          0.5,
+          12,
+          0.1
+        ]
+      },
+      "source": "v",
+      "source-layer": "national_parks",
+      "type": "fill"
+    },
+    {
+      "id": "urban-areas",
+      "maxzoom": 11,
+      "paint": {
+        "fill-color": "#e6e5e1",
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          0.4,
+          11,
+          0.6
+        ]
+      },
+      "source": "v",
+      "source-layer": "urban_areas",
+      "type": "fill"
+    },
+    {
+      "id": "sites",
+      "paint": {
+        "fill-color": "#eee7dd",
+        "fill-opacity": 0.7
+      },
+      "source": "v",
+      "source-layer": "sites",
+      "type": "fill"
+    },
+    {
+      "id": "greenspace",
+      "paint": {
+        "fill-antialias": false,
+        "fill-color": "#eaeee7"
+      },
+      "source": "v",
+      "source-layer": "greenspaces",
+      "type": "fill"
+    },
+    {
+      "id": "'greenspace outlines'",
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#d5ddd0",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          0.1,
+          15,
+          0.3,
+          18,
+          0.6
+        ]
+      },
+      "source": "v",
+      "source-layer": "greenspces",
+      "type": "line"
+    },
+    {
+      "id": "woodland",
+      "paint": {
+        "fill-color": "#d8ddd4",
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          0.5,
+          12,
+          1
+        ]
+      },
+      "source": "v",
+      "source-layer": "woodland",
+      "type": "fill"
+    },
+    {
+      "id": "surfacewater",
+      "paint": {
+        "fill-color": "#c5cdd0"
+      },
+      "source": "v",
+      "source-layer": "surfacewater",
+      "type": "fill"
+    },
+    {
+      "id": "foreshore",
+      "paint": {
+        "fill-color": "#e9e7e2"
+      },
+      "source": "v",
+      "source-layer": "foreshore",
+      "type": "fill"
+    },
+    {
+      "id": "waterlines",
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#c4cdd0",
+        "line-width": [
+          "match",
+          [
+            "get",
+            "type"
+          ],
+          [
+            "National",
+            "Regional",
+            "District",
+            "Local"
+          ],
+          1,
+          [
+            "MHW"
+          ],
+          1.2,
+          [
+            "MLW"
+          ],
+          0.7,
+          1
+        ]
+      },
+      "source": "v",
+      "source-layer": "waterlines",
+      "type": "line"
+    },
+    {
+      "id": "buildings",
+      "paint": {
+        "fill-color": "#e1e0db",
+        "fill-translate": [
+          0,
+          0
+        ]
+      },
+      "source": "v",
+      "source-layer": "buildings",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "all",
+        [
+          "==",
+          [
+            "get",
+            "level"
+          ],
+          0
+        ],
+        [
+          "match",
+          [
+            "get",
+            "type"
+          ],
+          [
+            "Resticted"
+          ],
+          true,
+          false
+        ]
+      ],
+      "id": "roads 0 Restricted Road",
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#ffffff",
+        "line-dasharray": [
+          2,
+          0.5
+        ],
+        "line-opacity": 1,
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          12,
+          1,
+          14,
+          2.5,
+          15,
+          4,
+          16,
+          7,
+          18,
+          24,
+          22,
+          85
+        ]
+      },
+      "source": "v",
+      "source-layer": "roads",
+      "type": "line"
+    }
+  ],
+  "sources": {
+    "v": {
+      "attribution": "Contains OS data (c) Crown copyright and database rights",
+      "maxzoom": 14,
+      "minzoom": 0,
+      "tiles": [
+        "http://raspberrypi.local/zxy/{z}/{x}/{y}.pbf"
+      ],
+      "type": "vector"
+    }
+  },
+  "sprite": "http://raspberrypi.local/sprites/sprites",
+  "version": 8,
+  "zoom": 14.693012568240825
+}
