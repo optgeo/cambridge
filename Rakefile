@@ -1,15 +1,24 @@
+def style(location) 
+  sh({'LOCATION' => location},
+    "parse-hocon style.conf > docs/style.json")
+  sh "gl-style-validate docs/style.json"
+end
+
 namespace :build do
   desc 'build Docker container image'
   task :docker do
     sh "docker build -t unvt/cambridge ."
   end
 
-  desc 'build style.json'
-  task :style do
-    sh({'LOCATION' => 'http://localhost'}, 
-      "parse-hocon style.conf > docs/style.json")
-    sh "gl-style-validate docs/style.json"
+  desc 'build style.json for localhost'
+  task :localhost do
+    style('http://localhost')
   end
+
+  desc 'build style.json for raspberrypi.local'
+  task :raspi do
+    style('http://raspberrypi.local')
+  end 
 end
 
 desc 'host the site'

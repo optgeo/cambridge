@@ -9,7 +9,7 @@ Download OS Open Zoomstack from [Ordnance Survey](https://www.ordnancesurvey.co.
 
 ## 2. build style.json
 ```zsh
-rake build:style
+rake build:localhost
 ```
 
 ## 3. install node packages
