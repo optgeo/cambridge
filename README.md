@@ -12,12 +12,17 @@ Download OS Open Zoomstack from [Ordnance Survey](https://www.ordnancesurvey.co.
 rake build:style
 ```
 
-## 3. start the server
+## 3. install node packages
+```zsh
+yarn add
+```
+
+## 4. start the server
 ```zsh
 rake host
 ```
 
-## 4. next step: see what is possible
+## 5. next step: see what is possible
 ```zsh
 rake -T
 ```
