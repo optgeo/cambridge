@@ -14,7 +14,7 @@ rake build:localhost
 
 ## 3. install node packages
 ```zsh
-yarn add
+yarn install
 ```
 
 ## 4. start the server
