@@ -19,11 +19,25 @@ namespace :build do
   task :raspi do
     style('http://raspberrypi.local')
   end 
+
+  desc 'extract all tiles from mbtiles'
+  task :tiles do
+    sh "tile-join --force --no-tile-compression\
+      --output-to-directory=docs/zxy\
+      --no-tile-size-limit src/OS_Open_Zoomstack.mbtiles"
+  end
 end
 
-desc 'host the site'
-task :host do
-  sh "node index.js"
+namespace :host do
+  desc 'host the site using mbtiles'
+  task :mbtiles do
+    sh "node index.js"
+  end
+
+  desc 'host the site using raw tiles'
+  task :tiles do
+    sh "budo -d docs --port=80"
+  end
 end
 
 namespace :docker do

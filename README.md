@@ -19,7 +19,7 @@ yarn install
 
 ## 4. start the server
 ```zsh
-rake host
+rake host:mbtiles
 ```
 
 ## 5. next step: see what is possible
