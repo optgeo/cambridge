@@ -5,11 +5,6 @@ def style(location)
 end
 
 namespace :build do
-  desc 'build Docker container image'
-  task :docker do
-    sh "docker build -t unvt/cambridge ."
-  end
-
   desc 'build style.json for localhost'
   task :localhost do
     style('http://localhost')
@@ -41,6 +36,11 @@ namespace :host do
 end
 
 namespace :docker do
+  desc 'build Docker container image'
+  task :build do
+    sh "docker build -t unvt/cambridge ."
+  end
+
   desc 'run docker for cambridge'
   task :run do
     sh "docker run -ti --rm -v #{Dir.pwd}:/root/cambridge -p 80:80 unvt/cambridge"

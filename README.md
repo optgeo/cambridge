@@ -27,8 +27,14 @@ rake host:mbtiles
 rake -T
 ```
 
-# run on docker
+# Docker
+## build
+```zsh
+rake docker:build
 ```
+
+## run
+```zsh
 rake docker:run
 ```
 
