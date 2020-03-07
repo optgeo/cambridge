@@ -22,7 +22,7 @@ namespace :style do
 
   desc 'build style.json for https://raspberrypi.local'
   task :raspis do
-    style('https://raspberypi.local')
+    style('https://raspberrypi.local')
   end
 end
 namespace :build do
