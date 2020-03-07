@@ -57,7 +57,7 @@ end
 namespace :docker do
   desc 'build Docker container image'
   task :build do
-    sh "docker build -t unvt/cambridge ."
+    sh "docker build -t unvt/cambridge docker"
   end
 
   desc 'run docker for cambridge'
