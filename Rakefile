@@ -25,6 +25,7 @@ namespace :style do
     style('https://raspberrypi.local')
   end
 end
+
 namespace :build do
   desc 'extract all tiles from mbtiles'
   task :tiles do
@@ -69,3 +70,9 @@ namespace :docker do
     sh "docker run -ti --rm -v #{Dir.pwd}:/root/cambridge unvt/cambridge"
   end
 end
+
+desc 'create the whole environment on a raw Raspberry Pi.'
+task :world do
+  raise 'not implemented'
+end
+

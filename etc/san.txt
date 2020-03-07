@@ -1,1 +1,1 @@
-subjectAltName = DNS:*.local
+subjectAltName = DNS:raspberrypi.local, DNS:localhost
