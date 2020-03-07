@@ -19,8 +19,12 @@ namespace :style do
   task :raspi do
     style('http://raspberrypi.local')
   end 
-end
 
+  desc 'build style.json for https://raspberrypi.local'
+  task :raspis do
+    style('https://raspberypi.local')
+  end
+end
 namespace :build do
   desc 'extract all tiles from mbtiles'
   task :tiles do
@@ -62,6 +66,6 @@ namespace :docker do
 
   desc 'run docker for cambridge'
   task :run do
-    sh "docker run -ti --rm -v #{Dir.pwd}:/root/cambridge -p 80:80 unvt/cambridge"
+    sh "docker run -ti --rm -v #{Dir.pwd}:/root/cambridge unvt/cambridge"
   end
 end
