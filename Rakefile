@@ -4,22 +4,36 @@ def style(location)
   sh "gl-style-validate docs/style.json"
 end
 
-namespace :build do
+namespace :style do
   desc 'build style.json for localhost'
   task :localhost do
     style('http://localhost')
+  end
+
+  desc 'build style.json for https://localhost'
+  task :localhosts do
+    style('https://localhost')
   end
 
   desc 'build style.json for raspberrypi.local'
   task :raspi do
     style('http://raspberrypi.local')
   end 
+end
 
+namespace :build do
   desc 'extract all tiles from mbtiles'
   task :tiles do
     sh "tile-join --force --no-tile-compression\
       --output-to-directory=docs/zxy\
       --no-tile-size-limit src/OS_Open_Zoomstack.mbtiles"
+  end
+
+  desc 'create self-signed certififcates'
+  task :certs do
+    sh "openssl genrsa 2048 > etc/cert.key"
+    sh "openssl req -new -key etc/cert.key -subj \"/C=JP\" > etc/cert.csr"
+    sh "openssl x509 -days 3650 -req -extfile etc/san.txt -signkey etc/cert.key < etc/cert.csr > etc/cert.pem"
   end
 end
 
@@ -32,6 +46,11 @@ namespace :host do
   desc 'host the site using raw tiles'
   task :tiles do
     sh "budo -d docs --port=80"
+  end
+
+  desc 'host the site using raw tiles via h2o'
+  task :h2o do
+    sh "h2o"
   end
 end
 

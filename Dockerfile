@@ -10,6 +10,7 @@ RUN apk update &&\
     curl\
     g++\
     git\
+    h2o\
     htop\
     libtool\
     linux-headers\

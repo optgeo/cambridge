@@ -1,6 +1,7 @@
 src/OS_Open_Zoomstack.mbtiles
 docs/style.json
 zxy
+*.swp
 
 #
 .ash_history
