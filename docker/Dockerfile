@@ -1,4 +1,4 @@
-FROM arm32v6/alpine
+FROM arm64v8/alpine
 
 WORKDIR /root
 RUN apk update &&\

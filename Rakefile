@@ -73,6 +73,6 @@ end
 
 desc 'create the whole environment on a raw Raspberry Pi.'
 task :world do
-  raise 'not implemented'
+  sh 'sudo true'
 end
 
