@@ -74,5 +74,6 @@ end
 desc 'create the whole environment on a raw Raspberry Pi.'
 task :world do
   sh 'sudo true'
+  sh 'git pull unvt/cambridge'
 end
 
