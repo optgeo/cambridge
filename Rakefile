@@ -71,9 +71,8 @@ namespace :docker do
   end
 end
 
-desc 'create the whole environment on a raw Raspberry Pi.'
+desc 'install UNVT in Raspbian'
 task :world do
-  sh 'sudo true'
-  sh 'git pull unvt/cambridge'
+  sh 'curl -sL https://unvt.github.io/equinox/install.sh | bash -'
 end
 
